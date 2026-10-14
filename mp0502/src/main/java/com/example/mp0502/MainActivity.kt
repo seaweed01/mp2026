@@ -38,7 +38,16 @@ class MainActivity : AppCompatActivity() {
         tvObj=findViewById(R.id.textViewResult)
 
         val listener = CompoundButton.OnCheckedChangeListener{ buttonView, isChecked ->
-            // TODO :  event handler
+            if (isChecked) {
+                val itemName = when (buttonView.id) {
+                    R.id.checkBox1 -> "소방차"
+                    R.id.checkBox2 -> "소화기"
+                    R.id.checkBox3 -> "청진기"
+                    R.id.checkBox4 -> "장갑"
+                    else -> ""
+                }
+                Toast.makeText(this, "${itemName}을(를) 선택했습니다.", Toast.LENGTH_SHORT).show()
+            }
         }
 
         cbObj1.setOnCheckedChangeListener(listener)
@@ -47,7 +56,13 @@ class MainActivity : AppCompatActivity() {
         cbObj4.setOnCheckedChangeListener(listener)
 
         btnObj.setOnClickListener {
-            // TODO : event hander
+            if (!flag) {
+                if (cbObj1.isChecked && cbObj2.isChecked && !cbObj3.isChecked && !cbObj4.isChecked) {
+                    tvObj.text = "맞았습니다."
+                } else {
+                    tvObj.text = "틀렸습니다."
+                }
+            }
         }
     }
 }
