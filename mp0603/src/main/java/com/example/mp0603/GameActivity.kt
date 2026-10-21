@@ -42,6 +42,7 @@ class GameActivity : AppCompatActivity() {
         }
 
         // TODO : Intent로 전달된 데이터를 받아오기
+        mShape = intent.getIntExtra("shape", 0)
         val	shapeObj : ImageView = findViewById(R.id.imageView)
 
         // 도형에 맞는 이미지를 설정
@@ -88,7 +89,7 @@ class GameActivity : AppCompatActivity() {
         val	btnObj: Button = findViewById(R.id.button)
         btnObj.setOnClickListener {
             // TODO : retutn intent
-
+            intent.putExtra("selectNum", selectNum)
             setResult(RESULT_OK, intent) //결과	전달
             finish() //현재	액티비티	종료
         }

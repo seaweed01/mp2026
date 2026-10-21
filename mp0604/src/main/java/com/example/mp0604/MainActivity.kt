@@ -26,6 +26,9 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             val	url = editText.text.toString() // EditText에 입력된 텍스트 가져오기
             // TODO : web browsing by implicit intent
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+
             startActivity(intent) // 웹 브라우저를 열고 지정된 URL을 표시하도록 인텐트를 실행
         }
     }

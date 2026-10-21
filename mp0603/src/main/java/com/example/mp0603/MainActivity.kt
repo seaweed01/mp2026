@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
             // TODO : 게임 액티비티에서 반환된 결과 처리
             if (result.resultCode == Activity.RESULT_OK) {
                 // TODO : 선택된 이미지의 상태를 가져오기
-                var	resId =
+                var resId = result.data?.getIntArrayExtra("selectNum")!!
 
                 var	num = 0
                 // 선택된 이미지를 레이아웃에 추가
