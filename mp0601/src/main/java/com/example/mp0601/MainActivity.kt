@@ -24,7 +24,9 @@ class MainActivity : AppCompatActivity() {
         // postDelayed를 사용하여 2초 후 작업 실행
         handler.postDelayed({
             // TODO : 2초 후 실행될 작업 1: LoginActivity로 이동하는 인텐트 생성
+            val	intent = Intent(this, LoginActivity::class.java)
             // TODO : 2초 후 실행될 작업 2: 생성한 인텐트를 사용하여 LoginActivity로 이동
+            startActivity(intent)
         },	2000)
     }
 }

@@ -28,8 +28,14 @@ class MainActivity : AppCompatActivity() {
         
         btnObj.setOnClickListener	{
             // TODO : GameActivity로 이동하기 위한 인텐트 생성
+            val	intent = Intent(this@MainActivity,	GameActivity::class.java)
             // TODO : 라디오 버튼에서 선택된 값에 따라 인텐트에 값을 추가
+            if	(rdObj1.isChecked == true)
+                intent.putExtra("image", 1)
+            else if (rdObj2.isChecked == true)
+                intent.putExtra("image", 2)
             // TODO : GameActivity로 인텐트 전송 및 액티비티 시작
+            startActivity(intent)
         }
     }
 }
